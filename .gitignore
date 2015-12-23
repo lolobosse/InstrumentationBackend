@@ -14,13 +14,14 @@ hs_err_pid*
 # Library files
 lib
 
-#Intellij Idea
+# Intellij Idea
 *.iml
-
 .idea
 
-#gradle
+# gradle
 .gradle
 gradle
 build
 
+# Database files
+*.db
