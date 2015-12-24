@@ -17,7 +17,7 @@ public class InstrumentationServerManager {
 
     public static InstrumentationServerManager getInstance() {
         if (instrumentationServerManager == null) {
-            return new InstrumentationServerManager();
+            instrumentationServerManager = new InstrumentationServerManager();
         }
         return instrumentationServerManager;
     }
@@ -30,10 +30,10 @@ public class InstrumentationServerManager {
         try {
             Statement statement;
             statement = databaseConnection.createStatement();
-            String sqlStatementGetAllApkPackagenamesAndHashes = "SELECT HASH " +
+            String sqlStatementGetAllApkPackageNamesAndHashes = "SELECT HASH " +
                     "FROM APKS;";
 
-            ResultSet resultSet = statement.executeQuery(sqlStatementGetAllApkPackagenamesAndHashes);
+            ResultSet resultSet = statement.executeQuery(sqlStatementGetAllApkPackageNamesAndHashes);
 
             while (resultSet.next()) {
                 instrumentedApkHashes.add(resultSet.getString("HASH"));
